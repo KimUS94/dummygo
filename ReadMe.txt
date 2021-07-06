@@ -8,3 +8,7 @@
 
 kubectl apply -f /home/master/workplace/kubernetes/dummygo/dummy.yaml
 kubectl delete -f "
+
+
+# 000.000.0.00:30001
+# -> Dummy, Hello!
