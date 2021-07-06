@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      dummy: web
+  template:
+    metadata:
+      labels:
+        dummy: web
+    spec:
+      containers:
+      - name: dummy-containers
+        image: dmltjq2524/dummy-go:0.0.1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dummy-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    dummy: web
+  ports:
+    - port: 9999
+      targetPort: 9999
+      nodePort: 30001
