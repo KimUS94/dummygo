@@ -4,7 +4,7 @@ metadata:
   name: dummy-deployment
   namespace: default
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       dummy: web
@@ -16,6 +16,7 @@ spec:
       containers:
       - name: dummy-containers
         image: dmltjq2524/dummy-go:0.0.1
+        args: [ "--kubelet-insecure-tls" ]
 ---
 apiVersion: v1
 kind: Service
