@@ -16,7 +16,6 @@ spec:
       containers:
       - name: dummy-containers
         image: dmltjq2524/dummy-go:0.0.1
-        args: [ "--kubelet-insecure-tls" ]
 ---
 apiVersion: v1
 kind: Service
